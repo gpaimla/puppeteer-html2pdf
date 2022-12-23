@@ -39,9 +39,15 @@ Stop with: `docker stop html2pdf`
 
 ## Docker Environment Variables
 
-| Name       | Description                                                                                                               | Default Value |
-| ---------- | ------------------------------------------------------------------------------------------------------------------------- | ------------- |
-| BODY_LIMIT | Maximum request body size. Passed on to [body-parser](https://github.com/expressjs/body-parser#limit) and `express.json`. | `1mb`         |
+| Name          | Description                                                                                                                                   | Default Value |
+|---------------|-----------------------------------------------------------------------------------------------------------------------------------------------|---------------|
+| BODY_LIMIT    | Maximum request body size. Passed on to [body-parser](https://github.com/expressjs/body-parser#limit) and `express.json`.                     | `1mb`         |
+| LOG_FORMAT | Custom [morgan](https://github.com/expressjs/morgan) format string.                                                                           | `common`      |
+| LOG_FILE | Will log all requests to this file                                                                                                             | `log.txt`     |
+| LOG_SIZE | Size from [rotating-file-stream](https://github.com/iccicci/rotating-file-stream#size) used in morgan for rotating the file based on the size | `10M`         |
+| LOG_INTERVAL | Interval from [rotating-file-stream](https://github.com/iccicci/rotating-file-stream#interval) used in morgan for rotating the file           | `1d`          |
+| LOG_TO_CONSOLE | Log requests to console                                                                                                                       | `true`        |
+| LOG_TO_CONSOLE_LOG_LEVEL | When set to 'ERRORS' only error responses are logged to the console.                                                                          | `ERRORS`      |
 
 ## Use it
 
